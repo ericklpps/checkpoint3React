@@ -1,0 +1,112 @@
+Read.me checkpoint 3 RWD
+
+Criamos a aplicação em next:
+
+npx create-next-app@latest nome-do-projeto --typescript >para criarmos o projeto e nomea-lo
+
+Fazemos as seguinter autorizações:
+
+Ok to proceed? (y) y
+√ Would you like to use ESLint? ... No 
+√ Would you like to use Tailwind CSS? ...Yes
+√ Would you like to use `src/` directory? .  Yes
+√ Would you like to use App Router? (recommended) ...  Yes
+√ Would you like to customize the default import alias (@/*)? ... No 
+====================================================================================================================================
+
+no terminal, selecionamos o projeto com cd e fazemos a seguinte instalação para configurações de tailwind. Usamos o com npx para executar.
+
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+====================================================================================================================================
+
+Configuramos o tailwind.config.js com o código:
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+====================================================================================================================================
+
+No arquvio globals.css, deixamos somente os seguintes códigos:
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+====================================================================================================================================
+Depois, instalamos o j-son server para emular uma api localmente:
+
+npm install -D json-server
+
+
+Criamos um arquvio chamado db.json e populamos com o que formos consumir, nesse caso, seguimos este exemplo:
+npm install -D json-server
+
+
+No arquivo db.json que criamos, populamos com:
+{"posts": [{ "id": 1, "title": "Primeira Postagem", "date": "2024-01-01", "image": "http://exemplo.com/imagem1.jpg" },{ "id": 2, "title": "Segunda Postagem", "date": "2024-02-01", "image": "http://exemplo.com/imagem2.jpg" }]}
+
+====================================================================================================================================
+
+
+instalamos o axios com:
+
+npm install axios
+
+====================================================================================================================================
+Com esses passos feitos, nós criamos o programa para podermos rodar os códigos.
+
+Para rodar localmente, precisaremos primeiro:
+
+cd nome-do-projeto
+npm install
+npm run dev
+
+Isso, gerará o link de localhost para rodar o nosso site
+
+Após isso, devemos instalar e rodar o json server, com os códigos abaixo, respectivamente:
+
+ npm init -y
+npm install json-server
+npm run json-server
+====================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
