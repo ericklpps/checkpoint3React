@@ -1,4 +1,4 @@
-// src/app/adicionar/AddPost.tsx
+//função de adicionar post, está separada, pois se trata de um formulário
 import React, { useState } from "react";
 import { addPost } from "@/app/services/ApiPosts";
 import { IPost } from "@/app/types/Post";
@@ -31,39 +31,48 @@ const AddPost: React.FC<AddPostProps> = ({ onPostAdded }) => {
     };
 
     return (
-        <>
-            <h1>Adicionar Post</h1>
-            <form onSubmit={handleSubmit}>
-                <label>Título:</label>
-                <input
-                    type="text"
-                    name="title"
-                    value={formData.title}
-                    onChange={handleChange}
-                    className="border border-gray-600"
-                    required
-                />
-                <label>Data:</label>
-                <input
-                    type="date"
-                    name="date"
-                    value={formData.date}
-                    onChange={handleChange}
-                    className="border border-gray-600"
-                    required
-                />
-                <label>URL da Imagem:</label>
-                <input
-                    type="text"
-                    name="image"
-                    value={formData.image}
-                    onChange={handleChange}
-                    className="border border-gray-600"
-                    required
-                />
-                <button className="bg-red-500" type="submit">Adicionar Post</button>
+        <div className="flex flex-col items-center justify-center h-full">
+            <h1 className="text-2xl font-bold mb-4">Adicionar Post</h1>
+            <form onSubmit={handleSubmit} className="w-full max-w-md">
+                <div className="mb-4">
+                    <label htmlFor="title" className="block text-gray-700 font-bold mb-2">Título:</label>
+                    <input
+                        id="title"
+                        type="text"
+                        name="title"
+                        value={formData.title}
+                        onChange={handleChange}
+                        className="border border-gray-600 px-4 py-2 rounded-md w-full"
+                        required
+                    />
+                </div>
+                <div className="mb-4">
+                    <label htmlFor="date" className="block text-gray-700 font-bold mb-2">Data:</label>
+                    <input
+                        id="date"
+                        type="date"
+                        name="date"
+                        value={formData.date}
+                        onChange={handleChange}
+                        className="border border-gray-600 px-4 py-2 rounded-md w-full"
+                        required
+                    />
+                </div>
+                <div className="mb-4">
+                    <label htmlFor="image" className="block text-gray-700 font-bold mb-2">URL da Imagem:</label>
+                    <input
+                        id="image"
+                        type="text"
+                        name="image"
+                        value={formData.image}
+                        onChange={handleChange}
+                        className="border border-gray-600 px-4 py-2 rounded-md w-full"
+                        required
+                    />
+                </div>
+                <button className="bg-red-500 text-white px-4 py-2 rounded-md" type="submit">Adicionar Post</button>
             </form>
-        </>
+        </div>
     );
 };
 

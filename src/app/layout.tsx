@@ -1,3 +1,4 @@
+//Página a ser exibida
 import "./globals.css";
 import Header from "@/app/componentes/header";
 import Footer from "@/app/componentes/footer";

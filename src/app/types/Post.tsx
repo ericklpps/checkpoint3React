@@ -1,4 +1,4 @@
-// src/app/types/Post.ts
+//Definindo as interfaces
 export interface IPost {
     id?: number
     title: string;

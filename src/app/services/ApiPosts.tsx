@@ -1,4 +1,4 @@
-// src/app/services/ApiPosts.tsx
+//Consumindo a api e separando em exports para realizar o crud
 import axios from "axios";
 import { IPost } from "@/app/types/Post";
 

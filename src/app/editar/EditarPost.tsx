@@ -1,4 +1,5 @@
-// src/app/editar/EditPost.tsx
+//Formulário de editar postagem, ele só abre se quiser realizar uma alteração
+
 import React, { useState } from "react";
 import { editPost } from "@/app/services/ApiPosts";
 import { IPost } from "@/app/types/Post";
@@ -33,38 +34,29 @@ const EditPost: React.FC<EditPostProps> = ({ post, onPostEdited, onCancel }) => 
 
     return (
         <>
-            <h1>Editar Post</h1>
-            <form onSubmit={handleSubmit}>
-                <label>Título:</label>
+            <br/>
+            <h1 className="text-2xl font-bold mb-4 text-center">Editar Post</h1>
+            <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+                <label className="block text-gray-700 font-bold mb-2">Título:</label>
                 <input
                     type="text"
                     name="title"
                     value={formData.title}
                     onChange={handleChange}
-                    className="border border-gray-600"
-                    required
-                />
-                <label>Data:</label>
+                    className="border border-gray-600 px-4 py-2 rounded-md w-full mb-4"
+                    required/>
+                <label className="block text-gray-700 font-bold mb-2">Data:</label>
                 <input
                     type="date"
                     name="date"
                     value={formData.date}
                     onChange={handleChange}
-                    className="border border-gray-600"
-                    required
-                />
-                <label>URL da Imagem:</label>
-                <input
-                    type="text"
-                    name="image"
-                    value={formData.image}
-                    onChange={handleChange}
-                    className="border border-gray-600"
-                    required
-                />
-                <button className="bg-blue-500" type="submit">Salvar</button>
-                <button type="button" onClick={onCancel} className="bg-gray-500 ml-2">Cancelar</button>
-            </form>
+                    className="border border-gray-600 px-4 py-2 rounded-md w-full mb-4"
+                    required/>
+                <button className="bg-yellow-500 text-white px-4 py-2 rounded-md mr-2" type="submit">Salvar</button>
+                <button className="bg-gray-500 text-white px-4 py-2 rounded-md" type="button" onClick={onCancel}>Cancelar</button>
+                <br/>
+            </form>     
         </>
     );
 };

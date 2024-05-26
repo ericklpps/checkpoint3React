@@ -1,3 +1,4 @@
+//componente header com os links de navegação
 import Link from 'next/link'
 
 export default function Header() {
